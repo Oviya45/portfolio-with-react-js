@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css"; 
+import "./App.css";
 
 const App = () => {
   return (
@@ -18,10 +18,12 @@ const App = () => {
 const Header = () => {
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
-    window.scrollTo({
-      top: section.offsetTop - 60, // Adjust for header height
-      behavior: "smooth",
-    });
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop - 60, // Adjust for header height
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
@@ -29,10 +31,26 @@ const Header = () => {
       <div className="logo">Oviya M.S</div>
       <nav>
         <ul>
-          <li><a href="#" onClick={() => scrollToSection("about")}>About</a></li>
-          <li><a href="#" onClick={() => scrollToSection("skills")}>Skills</a></li>
-          <li><a href="#" onClick={() => scrollToSection("projects")}>Projects</a></li>
-          <li><a href="#" onClick={() => scrollToSection("contact")}>Contact</a></li>
+          <li>
+            <a href="javascript:void(0)" onClick={() => scrollToSection("about")}>
+              About
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" onClick={() => scrollToSection("skills")}>
+              Skills
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" onClick={() => scrollToSection("projects")}>
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)" onClick={() => scrollToSection("contact")}>
+              Contact
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -46,7 +64,9 @@ const CoverPage = () => (
       <p>Student at Chennai Institute of Technology</p>
       <button
         className="btn"
-        onClick={() => document.getElementById("about").scrollIntoView({ behavior: "smooth" })}
+        onClick={() =>
+          document.getElementById("about").scrollIntoView({ behavior: "smooth" })
+        }
       >
         Get Started
       </button>
@@ -58,7 +78,7 @@ const AboutSection = () => (
   <div id="about" className="content-section">
     <h2>About Me</h2>
     <p>
-      Hello! I’m Oviya M.S., a passionate and driven second-year student at Chennai Institute of Technology, with a focus on web development and software engineering...
+      Hello! I’m Oviya M.S., a passionate and driven second-year student at Chennai Institute of Technology, with a focus on web development and software engineering.
     </p>
   </div>
 );
@@ -67,8 +87,21 @@ const SkillsSection = () => (
   <div id="skills" className="content-section">
     <h2>Skills</h2>
     <div className="skills-list">
-      {["C", "C++", "Java", "Python", "JavaScript", "HTML", "CSS", "React", "Node.js", "SQL"].map((skill) => (
-        <div className="skill-item" key={skill}>{skill}</div>
+      {[
+        "C",
+        "C++",
+        "Java",
+        "Python",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "React",
+        "Node.js",
+        "SQL",
+      ].map((skill, index) => (
+        <div className="skill-item" key={`skill-${index}`}>
+          {skill}
+        </div>
       ))}
     </div>
   </div>
@@ -78,12 +111,25 @@ const ProjectsSection = () => (
   <div id="projects" className="projects content-section">
     <h2>My Projects</h2>
     {[
-      { title: "Weather App", description: "A dynamic weather application built with HTML, CSS, and JavaScript..." },
-      { title: "Hotel Management (C++)", description: "A simple hotel management system built in C++..." },
-      { title: "Bank Account System (C++)", description: "A command-line application in C++..." },
-      { title: "Virtual Health Assistant (Python)", description: "A Python-based virtual assistant designed..." },
+      {
+        title: "Weather App",
+        description:
+          "A dynamic weather application built with HTML, CSS, and JavaScript.",
+      },
+      {
+        title: "Hotel Management (C++)",
+        description: "A simple hotel management system built in C++.",
+      },
+      {
+        title: "Bank Account System (C++)",
+        description: "A command-line application in C++.",
+      },
+      {
+        title: "Virtual Health Assistant (Python)",
+        description: "A Python-based virtual assistant designed.",
+      },
     ].map((project, index) => (
-      <div className="project-item" key={index}>
+      <div className="project-item" key={`project-${index}`}>
         <h3>{project.title}</h3>
         <p>{project.description}</p>
       </div>
