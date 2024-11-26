@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save Endangered Species</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Save Endangered Species in Indian Zoos</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#zoos">Zoos</a>
+      <a href="#contact">Donate</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Protect India's Endangered Wildlife</h2>
+    <p>Your contribution can save countless lives and secure their future.</p>
+    <button onclick="showDonateMessage()">Donate Now</button>
+  </section>
+
+  <section id="about" class="content">
+    <h2>About the Initiative</h2>
+    <p>
+      Indian zoos play a vital role in protecting endangered species through breeding programs, habitat conservation, 
+      and public awareness. By donating, you directly support these efforts and help secure a better future for these animals.
+    </p>
+  </section>
+
+  <section id="zoos" class="content">
+    <h2>Zoos Across India</h2>
+    <div class="zoo-list">
+      <div class="zoo">
+        <img src="images/bengal-tiger.jpg" alt="Bengal Tiger">
+        <h3>Sundarbans Tiger Reserve, West Bengal</h3>
+        <p>Home to the majestic Bengal Tiger and other rare species.</p>
+        <button onclick="donateToZoo('Sundarbans Tiger Reserve')">Donate</button>
+      </div>
+      <div class="zoo">
+        <img src="images/asiatic-lion.jpg" alt="Asiatic Lion">
+        <h3>Indira Gandhi Zoological Park, Andhra Pradesh</h3>
+        <p>Conserves species like Asiatic Lions and Indian Elephants.</p>
+        <button onclick="donateToZoo('Indira Gandhi Zoological Park')">Donate</button>
+      </div>
+      <div class="zoo">
+        <img src="images/red-panda.jpg" alt="Red Panda">
+        <h3>Padmaja Naidu Himalayan Zoo, West Bengal</h3>
+        <p>Renowned for conserving Red Pandas and Snow Leopards.</p>
+        <button onclick="donateToZoo('Padmaja Naidu Himalayan Zoo')">Donate</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="content">
+    <h2>Make a Difference</h2>
+    <p>Your donations go directly towards conservation programs, veterinary care, and habitat improvement.</p>
+    <p>Email: <a href="mailto:donate@endangeredzoos.org">donate@endangeredzoos.org</a></p>
+    <p>Phone: +91-9876543210</p>
+  </section>
+
+  <footer>
+    <p>© 2024 Endangered Species Initiative</p>
+    <p>
+      Follow us on
+      <a href="https://facebook.com" target="_blank">Facebook</a>,
+      <a href="https://twitter.com" target="_blank">Twitter</a>,
+      and <a href="https://instagram.com" target="_blank">Instagram</a>.
+    </p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
